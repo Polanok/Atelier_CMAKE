@@ -28,3 +28,54 @@ jobs:
           cmake ..
           make
           ./src/calculator add 10 5
+  Test_Sub:
+    needs: Compilation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test fonction sub
+        run: |
+          cd build
+          ./src/calculator sub 10 5
+
+  Test_Mul:
+    needs: Compilation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test fonction mul
+        run: |
+          cd build
+          ./src/calculator mul 10 5
+
+  Test_Div:
+    needs: Compilation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test fonction div
+        run: |
+          cd build
+          ./src/calculator div 10 5
+
+  Test_Car:
+    needs: Compilation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test fonction car
+        run: |
+          cd build
+          ./src/calculator car 5
+
+  Deployment:
+    needs:
+      - Test_Add
+      - Test_Sub
+      - Test_Mul
+      - Test_Div
+      - Test_Car
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy step
+        run: echo "Déploiement de la solution"
