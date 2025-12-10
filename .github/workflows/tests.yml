@@ -56,7 +56,6 @@ jobs:
           cd build
           cmake ..
           make
-          cd build
           ./src/calculator mul 10 5
 
   Test_Div:
