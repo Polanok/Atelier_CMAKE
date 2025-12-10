@@ -36,7 +36,7 @@ if (argc == 3) {
     char* a  = argv[2];
 
     if (strcmp(op, "car") == 0) {
-        double r = car(atof(a));   
+        double r = _car(atof(a));   
             printf("%lf", r);
         return 0;
      }
