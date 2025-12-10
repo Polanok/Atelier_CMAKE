@@ -30,7 +30,7 @@ int main(int argc, char *argv[]){
 	}
 	else {printf("Erreur de parametres");}
 	return 0;
-}
+
 if (argc == 3) {
     char* op = argv[1];
     char* a  = argv[2];
@@ -45,5 +45,4 @@ if (argc == 3) {
         return 1;
     }
 }
-
-		
+}	
